@@ -33,19 +33,19 @@ class Headless_Block_Parser extends WP_Block_Parser
             return parent::parse($document);
         }
 
-        $document_with_replacements = $this->replace_headless_content_link_urls($document);
+        $document_with_replacements = $this->replace_internal_link_url_domains($document);
 
         return parent::parse($document_with_replacements);
     }
 
     /**
-     * Modify internal link URLs to point to the decoupled frontend app.
+     * Rewrite internal link URLs to point to the decoupled frontend app.
      *
      * @param string $document Input document being parsed.
      *
-     * @return string $document Input document with internal link URLs replaced.
+     * @return string $document Input document with internal link URL domains replaced.
      */
-    private function replace_headless_content_link_urls(string $document): string
+    private function replace_internal_link_url_domains(string $document): string
     {
         // TODO: Get this value from an environment variable or the database.
         $frontend_app_url = 'http://localhost:3000';
