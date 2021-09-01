@@ -13,7 +13,7 @@
 /**
  * Custom block parser for headless WordPress sites.
  */
-class Headless_Block_Parser
+class Headless_Block_Parser extends WP_Block_Parser
 {
     /**
      * Parses a document and returns a list of block structures
@@ -26,17 +26,16 @@ class Headless_Block_Parser
      *
      * @return WP_Block_Parser_Block[]
      */
-    public function parse(string $document): array
+    public function parse($document): array
     {
-        $parser = new WP_Block_Parser();
-
+        // Don't modify the content if this is not a GraphQL or REST API request.
         if (!is_graphql_request() && !defined('REST_REQUEST')) {
-            return $parser->parse($document);
+            return parent::parse($document);
         }
 
         $document_with_replacements = $this->replace_headless_content_link_urls($document);
 
-        return $parser->parse($document_with_replacements);
+        return parent::parse($document_with_replacements);
     }
 
     /**
