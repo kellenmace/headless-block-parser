@@ -11,5 +11,9 @@ With this plugin in place, a link inside of a blog post's content that points to
 1. Install and activate the plugin.
 1. Test a few internal links in your decoupled frontend JS app to ensure their domains have been re-written properly.
 
-The `data-internal-link="true"` data attribute that this plugin adds to internal links can also be used to convert regular anchor tags to your JS framework's `Link` component, as described in this blog post:
-https://developers.wpengine.com/blog/gutenberg-in-headless-wordpress-render-blocks-as-html/
+The `data-internal-link="true"` data attribute that this plugin adds to internal links can also be used to convert regular anchor tags to your JS framework's `Link` component, as described in [this blog post](https://developers.wpengine.com/blog/gutenberg-in-headless-wordpress-wpgraphql-gutenberg) and [this video](https://www.youtube.com/watch?v=4Ybro_joKMk&t=610s). That way, your JS framework's router will handle the route changes for internal links rather than a full-page reload occurring.
+
+## Minimum Software Requirements
+
+- PHP 7.4+
+- WordPress 5.8+
