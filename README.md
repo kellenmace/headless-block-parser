@@ -2,7 +2,7 @@
 
 Plugin for headless WordPress projects that use the [WPGraphQL Gutenberg](https://github.com/pristas-peter/wp-graphql-gutenberg) extension. It implements a custom block parser that replaces internal link URL domains with that of the decoupled frontend JS app.
 
-With this plugin in place, a link inside of a blog post's content that points to `https://my-wp-backend.local/blog/hello-world` will be re-written to instead point to `http:localhost:3000/blog/hello-world`, for example.
+With this plugin in place, links inside of Gutenberg blocks that point to `https://my-wp-backend.local/blog/hello-world` will be re-written to instead point to `http://localhost:3000/blog/hello-world` (or whatever you've set as the frontend app URL), for example.
 
 ## Steps to Use
 
