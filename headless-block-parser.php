@@ -51,7 +51,7 @@ class Headless_Block_Parser extends WP_Block_Parser
     private function replace_internal_link_url_domains(string $document): string
     {
         // TODO: Get this value from an environment variable or the database.
-        // If you're using Faust.js, you can call wpe_headless_get_setting( 'frontend_uri' )
+        // If you're using Faust.js, you can call WPE\FaustWP\Settings\faustwp_get_setting( 'frontend_uri' )
         $frontend_app_url = 'http://localhost:3000';
         $site_url         = site_url();
 
